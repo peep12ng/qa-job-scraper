@@ -1,0 +1,7 @@
+django
+playwright
+mysqlclient
+celery
+django-celery-beat
+pytest
+pytest-django
