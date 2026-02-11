@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Optional, Tuple
 
-from playwright.sync_api import Browser, Playwright, sync_playwright
+from playwright.sync_api import Browser, Playwright, TimeoutError as PlaywrightTimeoutError, sync_playwright
 
 @dataclass
 class PlaywrightConfig:
@@ -48,7 +48,10 @@ class PlaywrightClient:
         page.set_default_timeout(self.config.timeout_ms)
 
         try:
-            page.goto(url, wait_until="domcontentloaded")
+            try:
+                page.goto(url, wait_until="domcontentloaded")
+            except PlaywrightTimeoutError:
+                page.goto(url, wait_until="commit")
             title = page.title()
             html = page.content()
             return title, html
