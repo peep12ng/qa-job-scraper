@@ -29,7 +29,7 @@ DoD(Remote Verify, if pushed): 기본 테스트 또는 체크가 CI에서 실패
 DoD(Local Verify): DB/스케줄/Playwright 관련 필수 환경변수 누락 시 명확한 오류가 있다.  
 DoD(Remote Verify, if pushed): 설정 로딩 검증이 CI에서 실패하지 않는다.
 
-- [ ] 1.4 [Infra] 로컬 스모크(웹/워커/비트 중 1개 이상) 실행 증거 남기기
+- [x] 1.4 [Infra] 로컬 스모크(웹/워커/비트 중 1개 이상) 실행 증거 남기기
 DoD(Local Verify): 최소 1회 실행 증거가 남아 있다(로그/리포트).  
 DoD(Remote Verify, if pushed): 동일 스모크가 CI에서도 재현 가능하다.
 
