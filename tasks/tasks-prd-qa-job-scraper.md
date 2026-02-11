@@ -41,7 +41,7 @@ DoD(Remote Verify, if pushed): 실행 모드 안내가 CI 문서와 충돌하지
 DoD(Local Verify): 2.1~2.9의 핵심 동작이 로컬에서 확인된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 2.1 [DEV] FR-1 소스 레지스트리 및 우선순위 오케스트레이션 구현 (FR-1)
+- [x] 2.1 [DEV] FR-1 소스 레지스트리 및 우선순위 오케스트레이션 구현 (FR-1)
 DoD(Local Verify): 소스 우선순위에 따라 수집 시도가 순차 수행된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
