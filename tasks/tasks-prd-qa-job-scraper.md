@@ -13,15 +13,15 @@ Notes: 12h schedule; filters 서울/0~1년/QA/소스별 직종; sources priority
 아래 태스크는 PRD 기반으로 생성된 계획 초안이다. 번호/개수는 PRD의 FR/NFR 및 옵션 분류에 맞춰 구성되어 있다.
 
 ## Tasks
-- [x] 1.0 [Infra] 프로젝트 부트스트랩/실행 환경 구성
+- [] 1.0 [Infra] 프로젝트 부트스트랩/실행 환경 구성
 DoD(Local Verify): 1.1~1.5가 완료되어 기본 실행이 가능하다.  
 DoD(Remote Verify, if pushed): CI 기본 단계에서 환경 세팅 실패가 없다.
 
-- [ ] 1.1 [Infra] 런타임/가상환경/의존성 설치 기준 확정 (Django, Playwright, MySQL 드라이버, Celery 포함)
+- [x] 1.1 [Infra] 런타임/가상환경/의존성 설치 기준 확정 (Django, Playwright, MySQL 드라이버, Celery 포함)
 DoD(Local Verify): 의존성 설치 절차가 문서화되어 재현 가능하다.  
 DoD(Remote Verify, if pushed): CI 환경에서 의존성 설치가 실패하지 않는다.
 
-- [ ] 1.2 [Infra] Django 프로젝트/앱 구조 확정 및 기본 설정 모듈 분리
+- [x] 1.2 [Infra] Django 프로젝트/앱 구조 확정 및 기본 설정 모듈 분리
 DoD(Local Verify): 프로젝트가 기본 설정으로 실행 가능하다.  
 DoD(Remote Verify, if pushed): 기본 테스트 또는 체크가 CI에서 실패하지 않는다.
 
