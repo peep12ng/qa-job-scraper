@@ -33,7 +33,7 @@ DoD(Remote Verify, if pushed): 설정 로딩 검증이 CI에서 실패하지 않
 DoD(Local Verify): 최소 1회 실행 증거가 남아 있다(로그/리포트).  
 DoD(Remote Verify, if pushed): 동일 스모크가 CI에서도 재현 가능하다.
 
-- [ ] 1.5 [Infra] 기본 로그/출력 경로 및 실행 모드(웹/워커/비트) 정리
+- [x] 1.5 [Infra] 기본 로그/출력 경로 및 실행 모드(웹/워커/비트) 정리
 DoD(Local Verify): 실행 모드별 진입 절차가 문서화되어 있다.  
 DoD(Remote Verify, if pushed): 실행 모드 안내가 CI 문서와 충돌하지 않는다.
 

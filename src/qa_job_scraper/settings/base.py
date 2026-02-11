@@ -42,6 +42,9 @@ ALLOWED_HOSTS = [
     if host.strip()
 ]
 
+LOG_DIR = Path(get_env("LOG_DIR", default=str(PROJECT_ROOT / "logs")))
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+
 DB_ENGINE = get_env("DB_ENGINE", default="mysql", required=True)
 if DB_ENGINE == "mysql":
     DATABASES = {
@@ -136,5 +139,32 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "standard": {
+            "format": "[%(asctime)s] %(levelname)s %(name)s: %(message)s",
+        },
+    },
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "standard",
+        },
+        "file": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "formatter": "standard",
+            "filename": str(LOG_DIR / "app.log"),
+            "maxBytes": 5 * 1024 * 1024,
+            "backupCount": 3,
+        },
+    },
+    "root": {
+        "handlers": ["console", "file"],
+        "level": "INFO",
+    },
+}
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
