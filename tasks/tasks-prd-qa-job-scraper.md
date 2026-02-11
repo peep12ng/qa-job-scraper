@@ -169,7 +169,7 @@ DoD(Remote Verify, if pushed): 마이그레이션 체크가 CI에서 실패하�
 DoD(Local Verify): 중복 방지 및 조회 성능 기준이 충족된다.  
 DoD(Remote Verify, if pushed): 마이그레이션이 CI에서 실패하지 않는다.
 
-- [ ] 7.3 [Data] 조회 패턴 기반 쿼리/ORM 접근 경로 확정
+- [x] 7.3 [Data] 조회 패턴 기반 쿼리/ORM 접근 경로 확정
 DoD(Local Verify): 목록/상세 조회가 안정적으로 동작한다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 

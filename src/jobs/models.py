@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Q
 
 class Source(models.Model):
     name = models.CharField(max_length=100)
@@ -27,6 +28,44 @@ class DuplicateGroup(models.Model):
     def __str__(self):
         return self.group_key
 
+class JobPostQuerySet(models.QuerySet):
+    def with_related(self):
+        return self.select_related("source", "duplicate_group")
+    
+    def for_list(self):
+        return self.with_related().order_by("-posting_date", "-collected_at")
+    
+    def for_detail(self):
+        return self.with_related()
+    
+    def filter_by_location(self, location):
+        if not location:
+            return self
+        return self.filter(location__icontains=location)
+    
+    def filter_by_keyword(self, keyword):
+        if not keyword:
+            return self
+        return self.filter(
+            Q(title__icontains=keyword) 
+            | Q(company__icontains=keyword) 
+            | Q(tags__icontains=keyword)
+            | Q(description_snippet__icontains=keyword)
+        )
+    
+    def filter_by_experience_max(self, max_years):
+        if max_years is None:
+            return self
+        return self.filter(
+            Q(experience_max_years__isnull=True)
+            | Q(experience_max_years__lte=max_years)
+        )
+    
+    def filter_by_source_codes(self, codes):
+        if not codes:
+            return self
+        return self.filter(source__code__in=codes)
+
 class JobPost(models.Model):
     source = models.ForeignKey(Source, on_delete=models.PROTECT)
     duplicate_group = models.ForeignKey(
@@ -51,6 +90,8 @@ class JobPost(models.Model):
 
     collected_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    objects = JobPostQuerySet.as_manager()
 
     class Meta:
         constraints = [
