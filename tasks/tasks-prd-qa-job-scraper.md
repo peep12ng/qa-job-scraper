@@ -161,7 +161,7 @@ DoD(Remote Verify, if pushed): 문서 체크가 CI에서 실패하지 않는다.
 DoD(Local Verify): 7.1~7.3이 정의되어 있다.  
 DoD(Remote Verify, if pushed): DB 관련 체크가 CI에서 실패하지 않는다.
 
-- [ ] 7.1 [Data] MySQL 스키마 설계(JobPost, Source, RunLog, DuplicateGroup)
+- [x] 7.1 [Data] MySQL 스키마 설계(JobPost, Source, RunLog, DuplicateGroup)
 DoD(Local Verify): 테이블/필드/제약이 명확히 정의되어 있다.  
 DoD(Remote Verify, if pushed): 마이그레이션 체크가 CI에서 실패하지 않는다.
 
