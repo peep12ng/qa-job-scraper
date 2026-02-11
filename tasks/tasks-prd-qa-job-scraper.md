@@ -25,7 +25,7 @@ DoD(Remote Verify, if pushed): CI 환경에서 의존성 설치가 실패하지 
 DoD(Local Verify): 프로젝트가 기본 설정으로 실행 가능하다.  
 DoD(Remote Verify, if pushed): 기본 테스트 또는 체크가 CI에서 실패하지 않는다.
 
-- [ ] 1.3 [Infra] 환경변수 스키마 및 설정 로더 작성 (.env.example)
+- [x] 1.3 [Infra] 환경변수 스키마 및 설정 로더 작성 (.env.example)
 DoD(Local Verify): DB/스케줄/Playwright 관련 필수 환경변수 누락 시 명확한 오류가 있다.  
 DoD(Remote Verify, if pushed): 설정 로딩 검증이 CI에서 실패하지 않는다.
 

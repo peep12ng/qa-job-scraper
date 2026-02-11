@@ -1,11 +1,78 @@
+import os
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+PROJECT_ROOT = BASE_DIR.parent
 
-SECRET_KEY = 'dev-secret-key'
-DEBUG = True
+def load_dotenv(path: Path) -> None:
+    if not path.exists():
+        return
+    for line in path.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key and key not in os.environ:
+            os.environ[key] = value
 
-ALLOWED_HOSTS = []
+def get_env(name, default=None, required=False):
+    value = os.environ.get(name, default)
+    if required and (value is None or value == ""):
+        raise RuntimeError(f"Missing required environment variable: {name}")
+    return value
+
+def get_env_bool(name, default=False):
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    return value.strip().lower() in ("1", "true", "yes", "on")
+
+load_dotenv(PROJECT_ROOT / ".env")
+
+APP_ENV = get_env("APP_ENV", default="local")
+
+SECRET_KEY = get_env("DJANGO_SECRET_KEY", required=True)
+DEBUG = get_env_bool("DJANGO_DEBUG", default=(APP_ENV == "local"))
+
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in get_env("DJANGO_ALLOWED_HOSTS", default="").split(",")
+    if host.strip()
+]
+
+DB_ENGINE = get_env("DB_ENGINE", default="mysql", required=True)
+if DB_ENGINE == "mysql":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': get_env("DB_NAME", required=True),
+            'USER': get_env("DB_USER", required=True),
+            'PASSWORD': get_env("DB_PASSWORD", required=True),
+            'HOST': get_env("DB_HOST", required=True),
+            'PORT': get_env("DB_PORT", required=True),
+        }
+    }
+elif DB_ENGINE == "sqlite":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    raise RuntimeError(f"Unsupported DB_ENGINE: {DB_ENGINE}")
+
+SCRAPE_INTERVAL_HOURS = int(get_env("SCRAPE_INTERVAL_HOURS", required=True))
+SCRAPE_TIMEZONE = get_env("SCRAPE_TIMEZONE", required=True)
+
+PLAYWRIGHT_BROWSER = get_env("PLAYWRIGHT_BROWSER", required=True)
+PLAYWRIGHT_HEADLESS = get_env_bool("PLAYWRIGHT_HEADLESS", default=True)
+PLAYWRIGHT_TIMEOUT_MS = int(get_env("PLAYWRIGHT_TIMEOUT_MS", default="30000"))
+
+CELERY_BROKER_URL = get_env("CELERY_BROKER_URL", default=None)
+CELERY_RESULT_BACKEND = get_env("CELERY_RESULT_BACKEND", default=None)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -46,13 +113,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'qa_job_scraper.wsgi.application'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
