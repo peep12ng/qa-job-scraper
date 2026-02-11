@@ -45,7 +45,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 소스 우선순위에 따라 수집 시도가 순차 수행된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 2.2 [DEV] FR-2 필수 필터 적용 로직 및 소스별 직종 매핑 구현 (FR-2)
+- [x] 2.2 [DEV] FR-2 필수 필터 적용 로직 및 소스별 직종 매핑 구현 (FR-2)
 DoD(Local Verify): 서울/0~1년/QA 조건이 일관되게 적용된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
