@@ -69,7 +69,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 스케줄 실행과 결과 기록이 동작한다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 2.8 [DEV] FR-8 Playwright 기반 수집 베이스 구현 (FR-8)
+- [x] 2.8 [DEV] FR-8 Playwright 기반 수집 베이스 구현 (FR-8)
 DoD(Local Verify): 브라우저 자동화로 데이터 획득이 가능하다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
