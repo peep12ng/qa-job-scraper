@@ -165,7 +165,7 @@ DoD(Remote Verify, if pushed): DB 관련 체크가 CI에서 실패하지 않는�
 DoD(Local Verify): 테이블/필드/제약이 명확히 정의되어 있다.  
 DoD(Remote Verify, if pushed): 마이그레이션 체크가 CI에서 실패하지 않는다.
 
-- [ ] 7.2 [Data] 마이그레이션 및 인덱스/유니크 제약 적용
+- [x] 7.2 [Data] 마이그레이션 및 인덱스/유니크 제약 적용
 DoD(Local Verify): 중복 방지 및 조회 성능 기준이 충족된다.  
 DoD(Remote Verify, if pushed): 마이그레이션이 CI에서 실패하지 않는다.
 

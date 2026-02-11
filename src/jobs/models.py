@@ -10,6 +10,12 @@ class Source(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        indexes = [
+            models.Index(fields=["priority"], name="source_priority_idx"),
+            models.Index(fields=["is_active"], name="source_active_idx"),
+        ]
+
     def __str__(self):
         return f"{self.name} ({self.code})"
     
@@ -46,6 +52,20 @@ class JobPost(models.Model):
     collected_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["source",  "source_job_id"], name="unique_source_job"
+            ),
+        ]
+        indexes = [
+            models.Index(fields=["posting_date"], name="job_posting_date_idx"),
+            models.Index(fields=["closing_date"], name="job_closing_date_idx"),
+            models.Index(fields=["location"], name="job_location_idx"),
+            models.Index(fields=["experience_max_years"], name="job_exp_years_idx"),
+            models.Index(fields=["collected_at"], name="job_collected_at_idx"),
+        ]
+
     def __str__(self):
         return self.title
 
@@ -54,12 +74,24 @@ class RunLog(models.Model):
     STATUS_FAIL = "fail"
     STATUS_PARTIAL = "partial"
 
+    STATUS_CHOICES = [
+        (STATUS_SUCCESS, "Success"),
+        (STATUS_FAIL, "Fail"),
+        (STATUS_PARTIAL, "Partial"),
+    ]
+
     source = models.ForeignKey(Source, on_delete=models.PROTECT)
     status = models.CharField(max_length=20)
     started_at = models.DateTimeField()
     finished_at = models.DateTimeField(null=True, blank=True)
     items_collected = models.PositiveIntegerField(default=0)
     error_message = models.TextField(blank=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["status"], name="runlog_status_idx"),
+            models.Index(fields=["started_at"], name="runlog_started_at_idx"),
+        ]
 
     def __str__(self):
         return f"{self.source.code}:{self.status}"
