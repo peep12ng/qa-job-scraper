@@ -3,5 +3,6 @@ playwright
 mysqlclient
 celery
 django-celery-beat
+beautifulsoup4
 pytest
 pytest-django
