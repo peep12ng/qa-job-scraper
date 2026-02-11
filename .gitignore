@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtualenv
+.venv/
+venv/
+
+# Django
+db.sqlite3
+staticfiles/
+media/
+
+# Env / secrets
+.env
+.env.*
+*.env
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+test-results/
+
+# Playwright
+playwright-report/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
