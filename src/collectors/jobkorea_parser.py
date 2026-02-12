@@ -6,6 +6,8 @@ from datetime import date, datetime
 from typing import Dict, Iterable, List, Optional
 
 NEXT_PUSH_PATTERN = re.compile(r"self\.__next_f\.push\(\[1,\"(.*?)\"\]\)", re.DOTALL)
+SEOUL_CODES = {"I000"}
+SEOUL_PREFIX = "I"
 
 def _decode_next_segments(html: str) -> Iterable[str]:
     for match in NEXT_PUSH_PATTERN.finditer(html):
@@ -67,7 +69,14 @@ def _parse_iso_date(value: Optional[str]) -> Optional[date]:
         return datetime.fromisoformat(value).date()
     except ValueError:
         return None
-    
+
+def _resolve_location(area_codes: List[str], fallback: str) -> str:
+    if any(code in SEOUL_CODES for code in area_codes):
+        return "서울"
+    if any(code.startswith(SEOUL_PREFIX) for code in area_codes):
+        return "서울"
+    return fallback
+
 def _normalize_tags(raw: Optional[str]) -> List[str, str]:
     if not raw:
         return "", ""
@@ -110,7 +119,12 @@ def parse_jobkorea_list(html: str, base_url: str = "https://www.jobkorea.co.kr")
         job_no = item.get("legacyJobNo") or item.get("id")
         title = item.get("title") or ""
         company = item.get("companyName") or ""
+        area_codes = item.get("areaCodeList") or []
+        if not isinstance(area_codes, list):
+            area_codes = []
         location = item.get("locationName") or item.get("location") or item.get("locationCode") or ""
+        if not location:
+            location = _resolve_location(area_codes, " ".join(area_codes))
         if not location and item.get("areaCodeList"):
             location = " ".join(item.get("areaCodeList", []))
 
