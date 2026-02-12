@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional, Tuple
+from typing import Dict, Optional, Tuple
 
 from playwright.sync_api import Browser, Playwright, TimeoutError as PlaywrightTimeoutError, sync_playwright
 
@@ -8,6 +8,10 @@ class PlaywrightConfig:
     browser: str = "chromium"
     headless: bool = True
     timeout_ms: int = 30000
+    user_agent: Optional[str] = None
+    locale: str = "ko-KR"
+    timezone_id: str = "Asia/Seoul"
+    extra_http_headers: Optional[Dict[str, str]] = None
 
 class PlaywrightClient:
     def __init__(self, config: PlaywrightConfig):
@@ -44,7 +48,17 @@ class PlaywrightClient:
         self.start()
         assert self._browser is not None
 
-        page = self._browser.new_page()
+        context_kwargs = {
+            "locale": self.config.locale,
+            "timezone_id": self.config.timezone_id,
+        }
+        if self.config.user_agent:
+            context_kwargs["user_agent"] = self.config.user_agent
+        if self.config.extra_http_headers:
+            context_kwargs["extra_http_headers"] = self.config.extra_http_headers
+
+        context = self._browser.new_context(**context_kwargs)
+        page = context.new_page()
         page.set_default_timeout(self.config.timeout_ms)
 
         try:
@@ -57,3 +71,4 @@ class PlaywrightClient:
             return title, html
         finally:
             page.close()
+            context.close()
