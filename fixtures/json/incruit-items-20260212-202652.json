@@ -1,0 +1,42 @@
+{
+  "source_code": "incruit",
+  "collected_at": "2026-02-12T20:26:56.283322",
+  "url": "https://search.incruit.com/list/search.asp?col=job&kw=qa&memty=2000",
+  "title": "인크루트",
+  "items_total": 30,
+  "items_filtered": 2,
+  "items": [
+    {
+      "source_code": "incruit",
+      "source_job_id": "2601300001848",
+      "title": "2026 모바일 QA 담당자 (계약직)",
+      "company": "컴투스",
+      "location": "서울 금천구",
+      "employment_type": "계약직",
+      "experience_level": "신입",
+      "experience_max_years": 1,
+      "posting_date": null,
+      "closing_date": null,
+      "url": "https://job.incruit.com/jobdb_info/jobpost.asp?job=2601300001848&src=etc*search",
+      "description_snippet": "",
+      "tags": "게임(Game), 고객상담·관리·수퍼바이저, 컨텐츠·사이트운영",
+      "source_category_path": "게임(Game)"
+    },
+    {
+      "source_code": "incruit",
+      "source_job_id": "2601300001995",
+      "title": "Operational QA (Replacement of maternity leave)",
+      "company": "(주)글락소스미스클라인",
+      "location": "서울 용산구 외",
+      "employment_type": "정규직",
+      "experience_level": "경력 1년↑",
+      "experience_max_years": 1,
+      "posting_date": null,
+      "closing_date": null,
+      "url": "https://job.incruit.com/jobdb_info/jobpost.asp?job=2601300001995&src=etc*search",
+      "description_snippet": "",
+      "tags": "고객상담·관리·수퍼바이저, 생산·조립·가공·포장·검품, 컨텐츠·사이트운영",
+      "source_category_path": "고객상담·관리·수퍼바이저"
+    }
+  ]
+}
