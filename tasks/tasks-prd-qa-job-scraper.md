@@ -217,7 +217,7 @@ DoD(Remote Verify, if pushed): 통합 스모크가 CI에서 green이다.
 DoD(Local Verify): fixtures/html 또는 fixtures/json에 샘플이 저장되어 있다.  
 DoD(Remote Verify, if pushed): 샘플 기반 재현 문서가 있다.
 
-- [ ] 8.4-INCRUIT-CORE [Integrations] 인크루트 파서/정규화 로직 구현
+- [x] 8.4-INCRUIT-CORE [Integrations] 인크루트 파서/정규화 로직 구현
 DoD(Local Verify): 샘플 입력으로 표준 모델 변환이 된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
