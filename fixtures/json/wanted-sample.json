@@ -1,0 +1,1668 @@
+{
+    "data": [
+        {
+            "id": 342382,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 1251,
+                "name": "큐피스트(글램)",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/1251/w275aeuzl2xyavtb__1080_790.png",
+                "thumb": "https://static.wanted.co.kr/images/company/1251/w275aeuzl2xyavtb__400_400.png",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "강남구"
+            },
+            "position": "[국내] QA 엔지니어",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 876
+            },
+            "attraction_tags": [
+                10402,
+                10436,
+                10468,
+                10437,
+                10408,
+                10413,
+                10447,
+                10416,
+                10420,
+                10486,
+                10423,
+                10399
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10246,
+                10247,
+                10248,
+                10377,
+                10249,
+                10251,
+                10379,
+                10253,
+                10382,
+                10383,
+                10254,
+                10385,
+                10380,
+                10384,
+                10255,
+                10381,
+                10264,
+                10266
+            ],
+            "annual_from": 1,
+            "annual_to": 5,
+            "is_newbie": false,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 306913,
+            "reward_total": "20만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 2569,
+                "name": "미리디",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/2569/kdyxxgsh74n5gwvk__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/2569/kdyxxgsh74n5gwvk__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "구로구"
+            },
+            "position": "[커머스 플랫폼] Jr. QA 엔지니어",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10509,
+                10523,
+                10399,
+                10401,
+                10404,
+                10409,
+                10537,
+                10412,
+                10413,
+                10426,
+                10436,
+                10437,
+                10564,
+                10441,
+                10443,
+                10574,
+                10447,
+                10468,
+                10597,
+                10484,
+                10486
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10246,
+                10247,
+                10248,
+                10249,
+                10250,
+                10251,
+                10380,
+                10379,
+                10378,
+                10383,
+                10384,
+                10385,
+                10253,
+                10254,
+                10382,
+                10252,
+                10386,
+                10255,
+                10265,
+                10266,
+                10381,
+                10377
+            ],
+            "annual_from": 1,
+            "annual_to": 3,
+            "is_newbie": false,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 100000,
+                "reward_recommendee": 100000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "20만원",
+                "formatted_recommender": "10만원",
+                "formatted_recommendee": "10만원"
+            },
+            "employment_type": "contract",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 341628,
+            "reward_total": "20만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 4315,
+                "name": "위버스컴퍼니(WEVERSE COMPANY)",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/4315/agknhykituhazqd6__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/4315/agknhykituhazqd6__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "경기",
+                "district": "성남시"
+            },
+            "position": "[계약직] 프롬프트 엔지니어(장애인 특별전형)",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10508,
+                10518,
+                10523,
+                10397,
+                10401,
+                10404,
+                10408,
+                10412,
+                10421,
+                10422,
+                10423,
+                10425,
+                10426,
+                10427,
+                10433,
+                10434,
+                10436,
+                10437,
+                10438,
+                10439,
+                10468,
+                10597,
+                10486
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10247,
+                10248,
+                10377,
+                10250,
+                10378,
+                10249,
+                10253,
+                10251,
+                10383,
+                10384,
+                10385,
+                10379,
+                10254,
+                10382,
+                10265,
+                10266
+            ],
+            "annual_from": 0,
+            "annual_to": 1,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 100000,
+                "reward_recommendee": 100000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "20만원",
+                "formatted_recommender": "10만원",
+                "formatted_recommendee": "10만원"
+            },
+            "employment_type": "contract",
+            "additional_apply_type": [
+                "disabled_person"
+            ],
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 341349,
+            "reward_total": "20만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 49544,
+                "name": "피치에이아이",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/49544/efd7b4l6nbxxlm1b__1080_790.png",
+                "thumb": "https://static.wanted.co.kr/images/company/49544/efd7b4l6nbxxlm1b__400_400.png",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "강남구"
+            },
+            "position": "QA 계약직 신입",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10401,
+                10402,
+                10436,
+                10437,
+                10565,
+                10439,
+                10407,
+                10447,
+                10417,
+                10420,
+                10518,
+                10423
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10247,
+                10249,
+                10377,
+                10251,
+                10379,
+                10253,
+                10382,
+                10254,
+                10383,
+                10385,
+                10264
+            ],
+            "annual_from": 0,
+            "annual_to": 1,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 100000,
+                "reward_recommendee": 100000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "20만원",
+                "formatted_recommender": "10만원",
+                "formatted_recommendee": "10만원"
+            },
+            "employment_type": "contract",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 340653,
+            "reward_total": "20만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 9449,
+                "name": "씨메스(CMES)",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/9449/zpxekygev690p23l__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/9449/zpxekygev690p23l__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "강남구"
+            },
+            "position": "A.I Robot System 최적화 엔지니어",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10401,
+                10657,
+                10403,
+                10436,
+                10437,
+                10468,
+                10597,
+                10440,
+                10409,
+                10537,
+                10564,
+                10447,
+                10486,
+                10423,
+                10398
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10246,
+                10377,
+                10250,
+                10378,
+                10249,
+                10253,
+                10382,
+                10254,
+                10251,
+                10385,
+                10379,
+                10380,
+                10265,
+                10266
+            ],
+            "annual_from": 0,
+            "annual_to": 5,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 100000,
+                "reward_recommendee": 100000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "20만원",
+                "formatted_recommender": "10만원",
+                "formatted_recommendee": "10만원"
+            },
+            "employment_type": "contract",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 339499,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 4031,
+                "name": "쿼드마이너",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/4031/c7luvstzjwjzaql3__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/4031/c7luvstzjwjzaql3__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "서초구"
+            },
+            "position": "S/W QA 엔지니어",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 899
+            },
+            "attraction_tags": [
+                10401,
+                10433,
+                10403,
+                10468,
+                10437,
+                10436,
+                10597,
+                10440,
+                10408,
+                10439,
+                10413,
+                10420,
+                10398,
+                10462
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10246,
+                10377,
+                10250,
+                10251,
+                10380,
+                10253,
+                10382,
+                10254,
+                10379,
+                10378,
+                10249,
+                10385,
+                10265,
+                10266
+            ],
+            "annual_from": 0,
+            "annual_to": 2,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 340130,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 8441,
+                "name": "슈어소프트테크",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/8441/cihjuw8fqpkxfhhl__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/8441/cihjuw8fqpkxfhhl__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "경기",
+                "district": "성남시"
+            },
+            "position": "SW검증 (AX검증2팀/대전)",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 658
+            },
+            "attraction_tags": [
+                10433,
+                10401,
+                10404,
+                10468,
+                10437,
+                10597,
+                10409,
+                10443,
+                10413,
+                10417,
+                10518,
+                10486,
+                10427,
+                10399
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10247,
+                10377,
+                10250,
+                10378,
+                10249,
+                10381,
+                10383,
+                10255,
+                10385,
+                10265,
+                10266
+            ],
+            "annual_from": 0,
+            "annual_to": 100,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 339702,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 2065,
+                "name": "인피닉(infiniq)",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/2065/9ehaipqdfjnkovna__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/2065/9ehaipqdfjnkovna__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "경기",
+                "district": "수원시"
+            },
+            "position": "SW QA 엔지니어",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10433,
+                10404,
+                10597,
+                10437,
+                10409,
+                10447,
+                10486
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10247,
+                10249,
+                10254,
+                10383,
+                10382,
+                10385,
+                10265,
+                10266
+            ],
+            "annual_from": 0,
+            "annual_to": 5,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 299203,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 2602,
+                "name": "마스오토",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/2602/tlli66a2gz4ytt1v__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/2602/tlli66a2gz4ytt1v__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "서초구"
+            },
+            "position": "Data QA Specialist (Entry-level)",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 1634
+            },
+            "attraction_tags": [
+                10401,
+                10402,
+                10597,
+                10437,
+                10408,
+                10486,
+                10398,
+                10431
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10377,
+                10249,
+                10251,
+                10252,
+                10379,
+                10385,
+                10386,
+                10264,
+                10266
+            ],
+            "annual_from": 0,
+            "annual_to": 3,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": [
+                "foreigner"
+            ],
+            "preferred_languages": [
+                "영어"
+            ],
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 338286,
+            "reward_total": "20만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 24000,
+                "name": "토스뱅크",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/24000/fslrv5khtj5xfswl__1080_790.png",
+                "thumb": "https://static.wanted.co.kr/images/company/24000/fslrv5khtj5xfswl__400_400.png",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "강남구"
+            },
+            "position": "QA Specialist",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10399,
+                10401,
+                10404,
+                10408,
+                10537,
+                10412,
+                10420,
+                10424,
+                10426,
+                10429,
+                10430,
+                10436,
+                10564,
+                10440,
+                10466,
+                10467,
+                10468,
+                10597,
+                10486
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10246,
+                10248,
+                10377,
+                10250,
+                10378,
+                10252,
+                10253,
+                10249,
+                10251,
+                10384,
+                10385,
+                10386,
+                10379,
+                10380,
+                10254,
+                10382,
+                10265,
+                10266
+            ],
+            "annual_from": 1,
+            "annual_to": 5,
+            "is_newbie": false,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 100000,
+                "reward_recommendee": 100000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "20만원",
+                "formatted_recommender": "10만원",
+                "formatted_recommendee": "10만원"
+            },
+            "employment_type": "contract",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 338042,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 44445,
+                "name": "사각",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/44445/qei2qxr87e3ogk7f__1080_790.png",
+                "thumb": "https://static.wanted.co.kr/images/company/44445/qei2qxr87e3ogk7f__400_400.png",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "영등포구"
+            },
+            "position": "소프트웨어 엔지니어 (Backend)",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10402,
+                10468,
+                10597,
+                10407,
+                10447,
+                10486,
+                10395,
+                10431
+            ],
+            "skill_tags": [
+                10496,
+                1698,
+                1444,
+                10291,
+                2683,
+                1470
+            ],
+            "user_oriented_tags": [
+                10247,
+                10251,
+                10252,
+                10253,
+                10379,
+                10383,
+                10254,
+                10382,
+                10386
+            ],
+            "annual_from": 1,
+            "annual_to": 8,
+            "is_newbie": false,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 337882,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 24084,
+                "name": "널리소프트",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/24084/coumt0gi8ae8s7lj__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/24084/coumt0gi8ae8s7lj__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "영등포구"
+            },
+            "position": "QA 담당자",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10433,
+                10402,
+                10401,
+                10468,
+                10437,
+                10436,
+                10440,
+                10409,
+                10418,
+                10419
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10246,
+                10247,
+                10249,
+                10250,
+                10251,
+                10379,
+                10378,
+                10382,
+                10254,
+                10253,
+                10385,
+                10380,
+                10383,
+                10264,
+                10266
+            ],
+            "annual_from": 1,
+            "annual_to": 7,
+            "is_newbie": false,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 337622,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 11631,
+                "name": "더블미디어",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/11631/cjjoyibmkrupawdk__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/11631/cjjoyibmkrupawdk__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "부산",
+                "district": "해운대구"
+            },
+            "position": "QA 엔지니어",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10401,
+                10403,
+                10468,
+                10437,
+                10438,
+                10436,
+                10408,
+                10504,
+                10599,
+                10467,
+                10423,
+                10426
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10249,
+                10379,
+                10252,
+                10253,
+                10251,
+                10385,
+                10386,
+                10265,
+                10266
+            ],
+            "annual_from": 0,
+            "annual_to": 1,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 247663,
+            "reward_total": "20만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 17315,
+                "name": "포토위젯",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/17315/wzwzarug6zzgdanv__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/17315/wzwzarug6zzgdanv__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "강남구"
+            },
+            "position": "QA Manager 계약직 (1년)",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10401,
+                10402,
+                10436,
+                10468,
+                10437,
+                10408,
+                10416,
+                10423,
+                10398
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10380,
+                10253,
+                10246
+            ],
+            "annual_from": 0,
+            "annual_to": 3,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 100000,
+                "reward_recommendee": 100000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "20만원",
+                "formatted_recommender": "10만원",
+                "formatted_recommendee": "10만원"
+            },
+            "employment_type": "contract",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 336505,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 54948,
+                "name": "뉴로엑스티",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/54948/bdymw1ebn8khusvi__1080_790.png",
+                "thumb": "https://static.wanted.co.kr/images/company/54948/bdymw1ebn8khusvi__400_400.png",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "성동구"
+            },
+            "position": "[의료AI] 의료기기 QA manager 5년 이하",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10436,
+                10597,
+                10468,
+                10447,
+                10486,
+                10431
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10377,
+                10249,
+                10252,
+                10253,
+                10385,
+                10386,
+                10264,
+                10266
+            ],
+            "annual_from": 1,
+            "annual_to": 5,
+            "is_newbie": false,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": [
+                "alternative_military"
+            ],
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 336961,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 8441,
+                "name": "슈어소프트테크",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/8441/cihjuw8fqpkxfhhl__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/8441/cihjuw8fqpkxfhhl__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "경기",
+                "district": "성남시"
+            },
+            "position": "SW검증 (Automotive시스템실)",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 658
+            },
+            "attraction_tags": [
+                10433,
+                10401,
+                10404,
+                10468,
+                10437,
+                10597,
+                10409,
+                10443,
+                10413,
+                10509,
+                10417,
+                10518,
+                10486,
+                10427,
+                10399
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10247,
+                10377,
+                10250,
+                10378,
+                10249,
+                10381,
+                10383,
+                10255,
+                10385,
+                10265,
+                10266
+            ],
+            "annual_from": 0,
+            "annual_to": 100,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 329974,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 8441,
+                "name": "슈어소프트테크",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/8441/cihjuw8fqpkxfhhl__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/8441/cihjuw8fqpkxfhhl__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "경기",
+                "district": "성남시"
+            },
+            "position": "SW검증 신입 (E-모빌리티시스템실)",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 658
+            },
+            "attraction_tags": [
+                10433,
+                10401,
+                10404,
+                10468,
+                10437,
+                10597,
+                10409,
+                10443,
+                10413,
+                10509,
+                10417,
+                10518,
+                10486,
+                10427,
+                10399
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10247,
+                10377,
+                10250,
+                10378,
+                10249,
+                10381,
+                10383,
+                10255,
+                10385,
+                10265,
+                10266
+            ],
+            "annual_from": 0,
+            "annual_to": 1,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 126393,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 1602,
+                "name": "넛지헬스케어(캐시워크)",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/1602/95ulgqwzbnnezvos__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/1602/95ulgqwzbnnezvos__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "강남구"
+            },
+            "position": "[병역특례 현역/보충역] QA 엔지니어",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 1026
+            },
+            "attraction_tags": [
+                10592,
+                10403,
+                10436,
+                10597,
+                10437,
+                10440,
+                10408,
+                10427,
+                10423,
+                10395
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10246,
+                10249,
+                10250,
+                10251,
+                10380,
+                10253,
+                10379,
+                10378,
+                10385,
+                10265,
+                10266
+            ],
+            "annual_from": 0,
+            "annual_to": 1,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": [
+                "alternative_military"
+            ],
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 336416,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 455,
+                "name": "럭스로보(LUXROBO)",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/455/mnes3mjmx4m7jmhk__1080_790.jpg",
+                "thumb": "https://static.wanted.co.kr/images/company/455/mnes3mjmx4m7jmhk__400_400.jpg",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "강남구"
+            },
+            "position": "QA 담당자",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10401,
+                10403,
+                10436,
+                10597,
+                10468,
+                10409,
+                10413,
+                10509,
+                10486,
+                10426,
+                10395,
+                10431
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10377,
+                10249,
+                10379,
+                10252,
+                10253,
+                10382,
+                10254,
+                10251,
+                10385,
+                10386,
+                10264,
+                10265,
+                10266
+            ],
+            "annual_from": 0,
+            "annual_to": 100,
+            "is_newbie": true,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        },
+        {
+            "id": 240889,
+            "reward_total": "100만원",
+            "is_bookmark": false,
+            "company": {
+                "id": 18519,
+                "name": "오토메타",
+                "application_response_stats": {
+                    "avg_rate": 0.0,
+                    "level": "very_low"
+                }
+            },
+            "title_img": {
+                "origin": "https://static.wanted.co.kr/images/company/18519/jnnt1u6qduypdyyc__1080_790.png",
+                "thumb": "https://static.wanted.co.kr/images/company/18519/jnnt1u6qduypdyyc__400_400.png",
+                "video": null
+            },
+            "address": {
+                "country": "한국",
+                "location": "서울",
+                "district": "강남구"
+            },
+            "position": "QA Engineer (SM)",
+            "category_tag": {
+                "parent_id": 518,
+                "id": 676
+            },
+            "attraction_tags": [
+                10402,
+                10436,
+                10597,
+                10408,
+                10412,
+                10420,
+                10399
+            ],
+            "skill_tags": [],
+            "user_oriented_tags": [
+                10245,
+                10248,
+                10377,
+                10249,
+                10382,
+                10254,
+                10384,
+                10385,
+                10264,
+                10266
+            ],
+            "annual_from": 1,
+            "annual_to": 5,
+            "is_newbie": false,
+            "reward": {
+                "id": null,
+                "wd_id": null,
+                "country": "kr",
+                "user_country": "KR",
+                "reward_recommender": 500000,
+                "reward_recommendee": 500000,
+                "reward_recommender_unit": "KRW",
+                "reward_recommendee_unit": "KRW",
+                "formatted_total": "100만원",
+                "formatted_recommender": "50만원",
+                "formatted_recommendee": "50만원"
+            },
+            "employment_type": "regular",
+            "additional_apply_type": null,
+            "preferred_languages": null,
+            "visa_information": {
+                "preferred_visas": null,
+                "supported_visas": null
+            },
+            "is_outlink": false
+        }
+    ],
+    "links": {
+        "prev": null,
+        "next": "/api/chaos/navigation/v1/results?job_group_id=518&job_ids=676&country=kr&job_sort=job.latest_order&years=0&years=1&locations=all&limit=20&offset=20"
+    }
+}
