@@ -209,7 +209,7 @@ DoD(Remote Verify, if pushed): 샘플 기반 재현 문서가 있다.
 DoD(Local Verify): 샘플 입력으로 표준 모델 변환이 된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 8.3-WANTED-INT [Integrations] 원티드 수집 파이프라인 통합
+- [x] 8.3-WANTED-INT [Integrations] 원티드 수집 파이프라인 통합
 DoD(Local Verify): 실제 실행 파이프라인에서 수집 결과가 확인된다.  
 DoD(Remote Verify, if pushed): 통합 스모크가 CI에서 green이다.
 
