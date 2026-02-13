@@ -3,8 +3,12 @@ from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
+from collectors.core.cli_utils import get_project_root, load_dotenv
+
 def main() -> int:
-    project_root = Path(__file__).resolve().parents[4]
+    project_root = get_project_root()
+    load_dotenv(project_root / ".env")
+
     out_path = Path(
         os.getenv(
             "ROCKETPUNCH_STORAGE_STATE",

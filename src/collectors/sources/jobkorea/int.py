@@ -1,50 +1,14 @@
 import json
 import os
 import sys
-from datetime import date, datetime
+from datetime import datetime
 from pathlib import Path
-from typing import Dict, Iterable
 
+from collectors.core.cli_utils import get_project_root, load_dotenv, parse_bool, read_url_from_file, serialize_items
 from collectors.core.filters import apply_required_filters, get_required_filters
-from collectors.sources.jobkorea.parser import parse_jobkorea_list
 from collectors.core.playwright_client import PlaywrightClient, PlaywrightConfig
 from collectors.core.registry import get_sources
-
-def load_dotenv(path: Path) -> None:
-    if not path.exists():
-        return
-    for line in path.read_text().splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, value = line.split("=", 1)
-        key = key.strip()
-        value = value.strip().strip('"').strip("'")
-        if key and key not in os.environ:
-            os.environ[key] = value
-
-def parse_bool(value: str, default: bool) -> bool:
-    if value is None:
-        return default
-    return value.strip().lower() in ("1", "true", "yes", "on")
-
-def read_url_from_file(path: Path) -> str:
-    if not path.exists():
-        return ""
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#"):
-            continue
-        return line
-    return ""
-
-def _serialize_value(value):
-    if isinstance(value, (date, datetime)):
-        return value.isoformat()
-    return value
-
-def _serialize_items(items: Iterable[Dict[str, object]]):
-    return [{k: _serialize_value(v) for k, v in item.items()} for item in items]
+from collectors.sources.jobkorea.parser import parse_jobkorea_list
 
 def _get_jobkorea_base_url() -> str:
     for source in get_sources(active_only=False):
@@ -53,7 +17,7 @@ def _get_jobkorea_base_url() -> str:
     return "https://www.jobkorea.co.kr"
 
 def main() -> int:
-    project_root = Path(__file__).resolve().parents[4]
+    project_root = get_project_root()
     load_dotenv(project_root / ".env")
 
     url_file = project_root / "fixtures" / "urls" / "jobkorea.txt"
@@ -92,7 +56,7 @@ def main() -> int:
         "title": title,
         "items_total": len(items),
         "items_filtered": len(filtered),
-        "items": _serialize_items(filtered),
+        "items": serialize_items(filtered),
     }
 
     out_path.write_text(
