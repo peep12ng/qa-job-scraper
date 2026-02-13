@@ -49,7 +49,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 서울/0~1년/QA 조건이 일관되게 적용된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 2.3 [DEV] FR-3 표준 모델 정규화 및 저장 파이프라인 구현 (FR-3)
+- [x] 2.3 [DEV] FR-3 표준 모델 정규화 및 저장 파이프라인 구현 (FR-3)
 DoD(Local Verify): 표준 필드가 누락 없이 저장된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
