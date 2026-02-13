@@ -53,7 +53,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 표준 필드가 누락 없이 저장된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 2.4 [DEV] FR-4 중복 감지/병합 로직 구현 (FR-4)
+- [x] 2.4 [DEV] FR-4 중복 감지/병합 로직 구현 (FR-4)
 DoD(Local Verify): 중복 판별 기준과 병합 결과가 확인된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
