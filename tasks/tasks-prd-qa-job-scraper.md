@@ -232,6 +232,7 @@ DoD(Remote Verify, if pushed): 샘플 기반 재현 문서가 있다.
 - [ ] 8.5-RP-CORE [Integrations] 로켓펀치 파서/정규화 로직 구현
 DoD(Local Verify): 샘플 입력으로 표준 모델 변환이 된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
+Note: Login HTML 수집 시 CloudFront 403 차단 발생으로 CORE 파서 구현 보류. (2026-02-13)
 
 - [ ] 8.5-RP-INT [Integrations] 로켓펀치 수집 파이프라인 통합
 DoD(Local Verify): 실제 실행 파이프라인에서 수집 결과가 확인된다.  
