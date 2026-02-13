@@ -1,4 +1,5 @@
 import os
+from datetime import timedelta
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -76,6 +77,13 @@ PLAYWRIGHT_TIMEOUT_MS = int(get_env("PLAYWRIGHT_TIMEOUT_MS", default="30000"))
 
 CELERY_BROKER_URL = get_env("CELERY_BROKER_URL", default=None)
 CELERY_RESULT_BACKEND = get_env("CELERY_RESULT_BACKEND", default=None)
+CELERY_TIMEZONE = SCRAPE_TIMEZONE
+CELERY_BEAT_SCHEDULE = {
+    "scheduled-collect-interval": {
+        "task": "jobs.tasks.scheduled_collect",
+        "schedule": timedelta(hours=SCRAPE_INTERVAL_HOURS),
+    },
+}
 
 INSTALLED_APPS = [
     'django.contrib.admin',

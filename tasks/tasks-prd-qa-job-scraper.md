@@ -65,7 +65,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 상세 화면에서 원문 링크/출처가 표시된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 2.7 [DEV] FR-7 12시간 주기 스케줄 실행 및 실행 결과 기록 구현 (FR-7)
+- [x] 2.7 [DEV] FR-7 12시간 주기 스케줄 실행 및 실행 결과 기록 구현 (FR-7)
 DoD(Local Verify): 스케줄 실행과 결과 기록이 동작한다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 

@@ -4,10 +4,15 @@ from typing import Dict, Iterable, List, Tuple
 
 from jobs.models import JobPost, Source
 
-def ensure_source(code: str, name: str | None = None, base_url: str | None = None) -> Source:
+def ensure_source(
+    code: str,
+    name: str | None = None,
+    base_url: str | None = None,
+    priority: int | None = None,
+) -> Source:
     defaults = {
         "name": name or code,
-        "priority": 999,
+        "priority": priority if priority is not None else 999,
         "base_url": base_url or "",
         "is_active": True,
     }
@@ -18,6 +23,8 @@ def ensure_source(code: str, name: str | None = None, base_url: str | None = Non
             updates["name"] = name
         if base_url and not source.base_url:
             updates["base_url"] = base_url
+        if priority is not None and source.priority != priority:
+            updates["priority"] = priority
         if updates:
             for key, value in updates.items():
                 setattr(source, key, value)
