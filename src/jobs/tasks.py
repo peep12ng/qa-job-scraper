@@ -2,10 +2,10 @@ from celery import shared_task
 from django.conf import settings
 from django.utils import timezone
 
-from collectors.fixture_loader import load_latest_fixture
-from collectors.normalization import normalize_items
-from collectors.registry import get_sources
-from collectors.playwright_client import PlaywrightClient, PlaywrightConfig
+from collectors.core.fixture_loader import load_latest_fixture
+from collectors.core.normalization import normalize_items
+from collectors.core.registry import get_sources
+from collectors.core.playwright_client import PlaywrightClient, PlaywrightConfig
 from jobs.models import RunLog
 from jobs.services.job_store import ensure_source, store_items
 

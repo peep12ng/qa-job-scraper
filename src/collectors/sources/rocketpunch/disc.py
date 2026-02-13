@@ -1,16 +1,11 @@
-import json
 import os
 import sys
-from datetime import date, datetime
+from datetime import datetime
 from pathlib import Path
-from typing import Dict, Iterable, Tuple
 
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError, sync_playwright
 
-from collectors.filters import apply_required_filters, get_required_filters
-from collectors.playwright_client import PlaywrightConfig
-from collectors.registry import get_sources
-from collectors.wanted_parser import parse_wanted_list
+from collectors.core.playwright_client import PlaywrightConfig
 
 def load_dotenv(path: Path) -> None:
     if not path.exists():
@@ -40,21 +35,7 @@ def read_url_from_file(path: Path) -> str:
         return line
     return ""
 
-def _serialize_value(value):
-    if isinstance(value, (date, datetime)):
-        return value.isoformat()
-    return value
-
-def _serialize_items(items: Iterable[Dict[str, object]]):
-    return [{k: _serialize_value(v) for k, v in item.items()} for item in items]
-
-def _get_wanted_base_url() -> str:
-    for source in get_sources(active_only=False):
-        if source.code == "wanted":
-            return source.base_url
-    return "https://www.wanted.co.kr"
-
-def _fetch_wanted_json(list_url: str, config: PlaywrightConfig) -> Tuple[str, str, Dict]:
+def _fetch_html(url: str, config: PlaywrightConfig, storage_state: str | None, wait_selector: str | None, wait_ms: int):
     with sync_playwright() as playwright:
         browser_type = getattr(playwright, config.browser, None)
         if browser_type is None:
@@ -69,43 +50,48 @@ def _fetch_wanted_json(list_url: str, config: PlaywrightConfig) -> Tuple[str, st
             context_kwargs["user_agent"] = config.user_agent
         if config.extra_http_headers:
             context_kwargs["extra_http_headers"] = config.extra_http_headers
+        if storage_state:
+            context_kwargs["storage_state"] = storage_state
 
         context = browser.new_context(**context_kwargs)
         page = context.new_page()
         page.set_default_timeout(config.timeout_ms)
 
-        def is_target_response(response) -> bool:
-            return "/api/chaos/navigation/v1/results" in response.url and response.status == 200
-
         try:
-            with page.expect_response(is_target_response) as resp_info:
-                page.goto(list_url, wait_until="domcontentloaded")
-            response = resp_info.value
-            data = response.json()
+            page.goto(url, wait_until="domcontentloaded")
+            if wait_selector:
+                try:
+                    page.wait_for_selector(wait_selector, timeout=config.timeout_ms)
+                except PlaywrightTimeoutError:
+                    pass
+            if wait_ms > 0:
+                page.wait_for_timeout(wait_ms)
+
             title = page.title()
-            return title, response.url, data
+            html = page.content()
+            return title, html
         finally:
             page.close()
             context.close()
             browser.close()
 
 def main() -> int:
-    project_root = Path(__file__).resolve().parents[2]
+    project_root = Path(__file__).resolve().parents[4]
     load_dotenv(project_root / ".env")
 
-    url_file = project_root / "fixtures" / "urls" / "wanted.txt"
-    list_url = sys.argv[1] if len(sys.argv) >= 2 else read_url_from_file(url_file)
+    url_file = project_root / "fixtures" / "urls" / "rocketpunch.txt"
+    url = sys.argv[1] if len(sys.argv) >= 2 else read_url_from_file(url_file)
 
-    if not list_url:
-        print("Usage: python src/collectors/wanted_int.py <list_url> [output_path]")
+    if not url:
+        print("Usage: python src/collectors/sources/rocketpunch/disc.py <url> [output_path]")
         print(f"Or put URL into: {url_file}")
         return 2
 
     if len(sys.argv) >= 3:
         out_path = Path(sys.argv[2])
     else:
-        out_dir = project_root / "fixtures" / "json"
-        out_path = out_dir / f"wanted-items-{datetime.now().strftime('%Y%m%d-%H%M%S')}.json"
+        out_dir = project_root / "fixtures" / "html"
+        out_path = out_dir / f"rocketpunch-list-{datetime.now().strftime('%Y%m%d-%H%M%S')}.html"
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -128,32 +114,19 @@ def main() -> int:
         extra_http_headers=extra_headers,
     )
 
-    try:
-        title, api_url, data = _fetch_wanted_json(list_url, config)
-    except PlaywrightTimeoutError:
-        print("ERROR: timeout waiting for wanted api response. Increase PLAYWRIGHT_TIMEOUT_MS or check the list URL.")
-        return 1
+    storage_state = os.getenv("ROCKETPUNCH_STORAGE_STATE")
+    wait_selector = os.getenv("ROCKETPUNCH_WAIT_SELECTOR")
+    wait_ms = int(os.getenv("ROCKETPUNCH_WAIT_MS", "3000"))
 
-    base_url = _get_wanted_base_url()
-    items = parse_wanted_list(data, base_url=base_url)
-    filtered = apply_required_filters(items, get_required_filters())
+    title, html = _fetch_html(url, config, storage_state, wait_selector, wait_ms)
 
-    payload = {
-        "source_code": "wanted",
-        "collected_at": datetime.now().isoformat(),
-        "url": list_url,
-        "title": title,
-        "api_url": api_url,
-        "items_total": len(items),
-        "items_filtered": len(filtered),
-        "items": _serialize_items(filtered),
-    }
+    out_path.write_text(html, encoding="utf-8")
 
-    out_path.write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
-    print(f"OK items={len(items)} filtered={len(filtered)} api_url={api_url} out={out_path}")
+    if "로그인 후 검색 가능" in html:
+        print(f"ERROR: login required. Set ROCKETPUNCH_STORAGE_STATE then retry. out={out_path}")
+        return 3
+
+    print(f"OK url={url} title={title} bytes={len(html)} out={out_path}")
     return 0
 
 if __name__ == "__main__":

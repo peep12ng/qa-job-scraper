@@ -21,7 +21,7 @@ def list_source_order(active_only: bool = True) -> List[str]:
 def run_priority_pipeline_and_store(
     collectors: Dict[str, CollectorFn], active_only: bool = True
 ) -> List[Dict[str, int]]:
-    from collectors.normalization import normalize_items
+    from .normalization import normalize_items
     from jobs.services.job_store import store_items
 
     summaries: List[Dict[str, int]] = []

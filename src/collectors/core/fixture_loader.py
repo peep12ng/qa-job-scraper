@@ -9,7 +9,7 @@ from typing import Any, Optional, Tuple
 _TIMESTAMP_RE = re.compile(r"^(?P<source>.+)-items-(?P<ts>\d{8}-\d{6})\.json$")
 
 def _project_root() -> Path:
-    return Path(__file__).resolve().parents[2]
+    return Path(__file__).resolve().parents[3]
 
 def _parse_timestamp(name: str) -> Optional[datetime]:
     match = _TIMESTAMP_RE.match(name)

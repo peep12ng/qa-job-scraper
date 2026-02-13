@@ -4,7 +4,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 def main() -> int:
-    project_root = Path(__file__).resolve().parents[2]
+    project_root = Path(__file__).resolve().parents[4]
     out_path = Path(
         os.getenv(
             "ROCKETPUNCH_STORAGE_STATE",

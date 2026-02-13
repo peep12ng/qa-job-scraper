@@ -5,7 +5,7 @@ from pathlib import Path
 
 from django.core.management.base import BaseCommand, CommandError
 
-from collectors.normalization import normalize_items
+from collectors.core.normalization import normalize_items
 from jobs.services.job_store import store_items
 
 class Command(BaseCommand):
