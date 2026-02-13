@@ -57,7 +57,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 중복 판별 기준과 병합 결과가 확인된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 2.5 [DEV] FR-5 공고 목록 UI 구현 (FR-5)
+- [x] 2.5 [DEV] FR-5 공고 목록 UI 구현 (FR-5)
 DoD(Local Verify): 목록 페이지에서 주요 필드가 표시된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
