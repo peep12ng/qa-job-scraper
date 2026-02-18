@@ -8,6 +8,16 @@ from typing import Dict, Iterable, List, Optional
 NEXT_PUSH_PATTERN = re.compile(r"self\.__next_f\.push\(\[1,\"(.*?)\"\]\)", re.DOTALL)
 SEOUL_CODES = {"I000"}
 SEOUL_PREFIX = "I"
+EMPLOYMENT_TYPE_MAP = {
+    "1": "정규직",
+    "2": "계약직",
+    "3": "인턴",
+    "4": "파견직",
+    "5": "도급",
+    "6": "프리랜서",
+    "7": "아르바이트",
+    "8": "연수/교육",
+}
 
 def _decode_next_segments(html: str) -> Iterable[str]:
     for match in NEXT_PUSH_PATTERN.finditer(html):
@@ -72,10 +82,25 @@ def _parse_iso_date(value: Optional[str]) -> Optional[date]:
 
 def _resolve_location(area_codes: List[str], fallback: str) -> str:
     if any(code in SEOUL_CODES for code in area_codes):
-        return "서울"
+        return "?쒖슱"
     if any(code.startswith(SEOUL_PREFIX) for code in area_codes):
-        return "서울"
+        return "?쒖슱"
     return fallback
+
+def _normalize_employment_type(value: object) -> str:
+    if not value:
+        return ""
+    if isinstance(value, list):
+        raw_values = [str(item) for item in value if item]
+    else:
+        raw_values = [str(value)]
+    labels: List[str] = []
+    for raw in raw_values:
+        code = raw.split("/")[0].strip()
+        label = EMPLOYMENT_TYPE_MAP.get(code)
+        if label and label not in labels:
+            labels.append(label)
+    return ", ".join(labels)
 
 def _normalize_tags(raw: Optional[str]) -> List[str, str]:
     if not raw:
@@ -104,10 +129,10 @@ def _experience_max_years(career_type: Optional[str], career_range: Optional[int
         return career_range
     return None
 
-def _build_url(job_no: Optional[str], base_url: str) -> str:
-    if not job_no:
+def _build_url(job_id: Optional[str], base_url: str) -> str:
+    if not job_id:
         return ""
-    return f"{base_url}/Recruit/GI_Read/{job_no}"
+    return f"{base_url}/Recruit/GI_Read/{job_id}"
 
 def parse_jobkorea_list(html: str, base_url: str = "https://www.jobkorea.co.kr") -> List[Dict[str, object]]:
     raw_items = _extract_job_items(html)
@@ -116,7 +141,7 @@ def parse_jobkorea_list(html: str, base_url: str = "https://www.jobkorea.co.kr")
     for item in raw_items:
         if not isinstance(item, dict):
             continue
-        job_no = item.get("legacyJobNo") or item.get("id")
+        job_id = item.get("id") or item.get("legacyJobNo")
         title = item.get("title") or ""
         company = item.get("companyName") or ""
         area_codes = item.get("areaCodeList") or []
@@ -141,16 +166,16 @@ def parse_jobkorea_list(html: str, base_url: str = "https://www.jobkorea.co.kr")
         items.append(
             {
                 "source_code": "jobkorea",
-                "source_job_id": str(job_no) if job_no else "",
+                "source_job_id": str(job_id) if job_id else "",
                 "title": title,
                 "company": company,
                 "location": location,
-                "employment_type": ",".join(item.get("employmentTypeCodeList", []) or []),
+                "employment_type": _normalize_employment_type(item.get("employmentTypeCodeList")),
                 "experience_level": _experience_level(career_type, career_range),
                 "experience_max_years": _experience_max_years(career_type, career_range),
                 "posting_date": posting_date,
                 "closing_date": closing_date,
-                "url": _build_url(str(job_no) if job_no else "", base_url),
+                "url": _build_url(str(job_id) if job_id else "", base_url),
                 "description_snippet": "",
                 "tags": tags,
                 "source_category_path": primary_category,

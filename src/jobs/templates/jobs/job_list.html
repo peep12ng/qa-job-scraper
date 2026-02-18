@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>QA Jobs</title>
+  <title>QA 채용 보드</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -117,24 +117,107 @@
     }
     .title-link {
       color: var(--ink);
-      text-decoration: none;
       font-weight: 600;
       font-size: 16px;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      padding: 0;
+      cursor: pointer;
     }
     .title-link:hover { color: var(--accent-2); }
+    .detail-button {
+      margin-top: 4px;
+      align-self: flex-start;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--stroke);
+      background: #fff;
+      cursor: pointer;
+      font-weight: 600;
+    }
     .empty {
       text-align: center;
       color: var(--muted);
       padding: 40px 0;
     }
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      z-index: 999;
+    }
+    .modal.open { display: block; }
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.35);
+      backdrop-filter: blur(4px);
+    }
+    .modal-card {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 8vh auto 0;
+      background: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      animation: rise 0.35s ease both;
+    }
+    .modal-title {
+      font-family: "DM Serif Display", serif;
+      font-size: 28px;
+      margin: 0;
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      border: 0;
+      background: #fff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      cursor: pointer;
+      border: 1px solid var(--stroke);
+    }
+    .modal-section {
+      border-top: 1px solid var(--stroke);
+      padding-top: 10px;
+    }
+    .modal-link-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .modal-link-row strong {
+      flex: 0 0 auto;
+    }
+    .modal-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .modal-link-row .modal-link {
+      flex: 1 1 auto;
+      min-width: 0;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .modal-link[aria-disabled="true"] {
+      color: var(--muted);
+      pointer-events: none;
+    }
     @media (max-width: 820px) {
-      .filter {
-        grid-template-columns: 1fr;
-      }
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      .filter { grid-template-columns: 1fr; }
+      .hero { flex-direction: column; align-items: flex-start; }
+      .modal-card { margin: 6vh 16px 0; }
     }
   </style>
 </head>
@@ -142,16 +225,16 @@
   <div class="page">
     <div class="hero">
       <div>
-        <h1 class="title">QA Job Board</h1>
-        <p class="subtitle">수집된 공고를 빠르게 탐색하세요</p>
+        <h1 class="title">QA 채용 보드</h1>
+        <p class="subtitle">QA 공고를 빠르게 찾아보세요.</p>
       </div>
-      <div class="chip">Latest 200</div>
+      <div class="chip">최신 200</div>
     </div>
 
     <form class="filter" method="get">
       <input type="text" name="q" placeholder="키워드" value="{{ filters.q }}">
       <input type="text" name="location" placeholder="지역" value="{{ filters.location }}">
-      <input type="text" name="max_years" placeholder="최대 경력(년)" value="{{ filters.max_years }}">
+      <input type="text" name="max_years" placeholder="최대 경력(예: 1)" value="{{ filters.max_years }}">
       <select name="source">
         <option value="">전체 소스</option>
         {% for source in sources %}
@@ -166,17 +249,27 @@
     {% if jobs %}
       <div class="grid">
         {% for job in jobs %}
-          <div class="card">
-            <a class="title-link" href="{{ job.url }}" target="_blank" rel="noreferrer">
-              {{ job.title }}
-            </a>
+          <div class="card"
+               data-title="{{ job.title|escape }}"
+               data-company="{{ job.company|escape }}"
+               data-location="{{ job.location|escape }}"
+               data-source="{{ job.source.name }} ({{ job.source.code }})"
+               data-url="{{ job.url|escape }}"
+               data-tags="{{ job.tags|escape }}"
+               data-description="{{ job.description_snippet|escape }}"
+               data-posting="{% if job.posting_date %}{{ job.posting_date|date:"Y-m-d" }}{% endif %}"
+               data-closing="{% if job.closing_date %}{{ job.closing_date|date:"Y-m-d" }}{% endif %}"
+               data-employment="{{ job.employment_type_display|escape }}"
+               data-experience="{{ job.experience_level|escape }}"
+               data-experience-max="{% if job.experience_max_years %}{{ job.experience_max_years }}{% endif %}">
+            <button class="title-link" type="button" data-open-modal>{{ job.title }}</button>
             <div class="meta">
               <span>{{ job.company }}</span>
-              <span>· {{ job.location }}</span>
+              <span> | {{ job.location }}</span>
             </div>
             <div class="meta">
-              <span class="chip">{{ job.source.name }}</span>
-              {% if job.employment_type %}<span class="chip">{{ job.employment_type }}</span>{% endif %}
+              <span class="chip">{{ job.source.name }} ({{ job.source.code }})</span>
+              {% if job.employment_type_display %}<span class="chip">{{ job.employment_type_display }}</span>{% endif %}
               {% if job.experience_level %}<span class="chip">{{ job.experience_level }}</span>{% endif %}
               {% if job.experience_max_years %}<span class="chip">~{{ job.experience_max_years }}년</span>{% endif %}
             </div>
@@ -187,6 +280,7 @@
             {% if job.tags %}
               <div class="meta">{{ job.tags }}</div>
             {% endif %}
+            <button class="detail-button" type="button" data-open-modal>상세 보기</button>
           </div>
         {% endfor %}
       </div>
@@ -194,5 +288,91 @@
       <div class="empty">조건에 맞는 공고가 없습니다.</div>
     {% endif %}
   </div>
+
+  <div class="modal" id="detail-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" data-close-modal>닫기</button>
+      <h2 class="modal-title" id="modal-title"></h2>
+      <div class="meta" id="modal-meta"></div>
+      <div class="modal-section modal-link-row">
+        <strong>원문 링크:</strong>
+        <a class="modal-link" id="modal-link" href="#" target="_blank" rel="noreferrer"></a>
+      </div>
+      <div class="modal-section" id="modal-tags-section" hidden>
+        <strong>태그</strong>: <span id="modal-tags"></span>
+      </div>
+      <div class="modal-section" id="modal-desc-section" hidden>
+        <strong>요약</strong>: <span id="modal-desc"></span>
+      </div>
+    </div>
+  </div>
+  <script>
+    const modal = document.getElementById("detail-modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalMeta = document.getElementById("modal-meta");
+    const modalLink = document.getElementById("modal-link");
+    const modalTags = document.getElementById("modal-tags");
+    const modalTagsSection = document.getElementById("modal-tags-section");
+    const modalDesc = document.getElementById("modal-desc");
+    const modalDescSection = document.getElementById("modal-desc-section");
+
+    function openModal(card) {
+      if (!card) return;
+      const data = card.dataset;
+
+      modalTitle.textContent = data.title || "";
+      modalMeta.textContent = [
+        data.company || "",
+        data.location ? " | " + data.location : "",
+        data.source ? " | " + data.source : ""
+      ].filter(Boolean).join(" ");
+
+      modalLink.href = data.url || "#";
+      modalLink.textContent = data.url || "";
+      modalLink.title = data.url || "";
+
+      if (data.tags) {
+        modalTags.textContent = data.tags;
+        modalTagsSection.hidden = false;
+      } else {
+        modalTagsSection.hidden = true;
+      }
+
+      if (data.description) {
+        modalDesc.textContent = data.description;
+        modalDescSection.hidden = false;
+      } else {
+        modalDescSection.hidden = true;
+      }
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll("[data-open-modal]").forEach((btn) => {
+      btn.addEventListener("click", (event) => {
+        const card = event.target.closest(".card");
+        openModal(card);
+      });
+    });
+
+    document.querySelectorAll("[data-close-modal]").forEach((btn) => {
+      btn.addEventListener("click", closeModal);
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
+    });
+  </script>
 </body>
 </html>
