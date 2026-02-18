@@ -6,6 +6,7 @@ from datetime import date, datetime
 from typing import Dict, Iterable, List, Optional
 
 NEXT_PUSH_PATTERN = re.compile(r"self\.__next_f\.push\(\[1,\"(.*?)\"\]\)", re.DOTALL)
+AREA_OBJECT_PATTERN = re.compile(r"\{[^{}]*\"type\":\"area\"[^{}]*\}")
 SEOUL_CODES = {"I000"}
 SEOUL_PREFIX = "I"
 EMPLOYMENT_TYPE_MAP = {
@@ -72,6 +73,26 @@ def _extract_job_items(html: str) -> List[Dict]:
             continue
     return []
 
+
+def _extract_area_map(html: str) -> Dict[str, str]:
+    area_map: Dict[str, str] = {}
+    for segment in _decode_next_segments(html):
+        if "\"type\":\"area\"" not in segment:
+            continue
+        for match in AREA_OBJECT_PATTERN.finditer(segment):
+            try:
+                obj = json.loads(match.group(0))
+            except json.JSONDecodeError:
+                continue
+            code = obj.get("code")
+            name = obj.get("displayName") or obj.get("tagDisplayName") or obj.get("originName")
+            if not code or not name:
+                continue
+            if ">" in name:
+                name = name.replace(">", " ").strip()
+            area_map.setdefault(code, name)
+    return area_map
+
 def _parse_iso_date(value: Optional[str]) -> Optional[date]:
     if not value:
         return None
@@ -82,10 +103,26 @@ def _parse_iso_date(value: Optional[str]) -> Optional[date]:
 
 def _resolve_location(area_codes: List[str], fallback: str) -> str:
     if any(code in SEOUL_CODES for code in area_codes):
-        return "?쒖슱"
+        return "서울"
     if any(code.startswith(SEOUL_PREFIX) for code in area_codes):
-        return "?쒖슱"
+        return "서울"
     return fallback
+
+def _resolve_area_name(area_codes: List[str], area_map: Dict[str, str]) -> str:
+    names: List[str] = []
+    for code in area_codes:
+        name = area_map.get(code)
+        if not name:
+            continue
+        if (code in SEOUL_CODES or code.startswith(SEOUL_PREFIX)) and "서울" not in name:
+            name = f"서울 {name}"
+        if name not in names:
+            names.append(name)
+    if not names:
+        return ""
+    if len(names) == 1:
+        return names[0]
+    return f"{names[0]} 외 {len(names) - 1}"
 
 def _normalize_employment_type(value: object) -> str:
     if not value:
@@ -136,6 +173,7 @@ def _build_url(job_id: Optional[str], base_url: str) -> str:
 
 def parse_jobkorea_list(html: str, base_url: str = "https://www.jobkorea.co.kr") -> List[Dict[str, object]]:
     raw_items = _extract_job_items(html)
+    area_map = _extract_area_map(html)
     items: List[Dict[str, object]] = []
 
     for item in raw_items:
@@ -149,9 +187,9 @@ def parse_jobkorea_list(html: str, base_url: str = "https://www.jobkorea.co.kr")
             area_codes = []
         location = item.get("locationName") or item.get("location") or item.get("locationCode") or ""
         if not location:
+            location = _resolve_area_name(area_codes, area_map)
+        if not location:
             location = _resolve_location(area_codes, " ".join(area_codes))
-        if not location and item.get("areaCodeList"):
-            location = " ".join(item.get("areaCodeList", []))
 
         career_type = item.get("careerType")
         career_range = item.get("careerRange")
