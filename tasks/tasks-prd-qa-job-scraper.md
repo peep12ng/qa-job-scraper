@@ -73,7 +73,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 브라우저 자동화로 데이터 획득이 가능하다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 2.9 [DEV] 실패 격리/재시도/백오프 전략 적용 (NFR)
+- [x] 2.9 [DEV] 실패 격리/재시도/백오프 전략 적용 (NFR)
 DoD(Local Verify): 부분 실패 시 전체 파이프라인이 중단되지 않는다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
@@ -173,7 +173,7 @@ DoD(Remote Verify, if pushed): 마이그레이션이 CI에서 실패하지 않�
 DoD(Local Verify): 목록/상세 조회가 안정적으로 동작한다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 8.0 [Integrations] 소스별 수집 어댑터(Slice Ladder)
+- [x] 8.0 [Integrations] 소스별 수집 어댑터(Slice Ladder)
 DoD(Local Verify): 각 소스별 DISC/CORE/INT 산출물이 존재한다.  
 DoD(Remote Verify, if pushed): 통합 스모크가 CI에서 재현 가능하다.
 
