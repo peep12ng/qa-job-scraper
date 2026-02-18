@@ -61,7 +61,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 목록 페이지에서 주요 필드가 표시된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 2.6 [DEV] FR-6 공고 상세 UI 구현 (FR-6)
+- [x] 2.6 [DEV] FR-6 공고 상세 UI 구현 (FR-6)
 DoD(Local Verify): 상세 화면에서 원문 링크/출처가 표시된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
