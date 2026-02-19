@@ -117,7 +117,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 실패 시나리오 1~2개 검증 증거가 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 4.0 [CI/CD] 자동 검증 파이프라인
+- [x] 4.0 [CI/CD] 자동 검증 파이프라인
 DoD(Local Verify): 4.1~4.2 범위가 정리되어 있다.  
 DoD(Remote Verify, if pushed): CI 체크가 green이다.
 
@@ -125,7 +125,7 @@ DoD(Remote Verify, if pushed): CI 체크가 green이다.
 DoD(Local Verify): 로컬 테스트가 재현 가능하다.  
 DoD(Remote Verify, if pushed): CI에서 테스트 체크가 green이다.
 
-- [ ] 4.2 [CI/CD] 린트/정적분석 구성 (도입 시)
+- [x] 4.2 [CI/CD] 린트/정적분석 구성 (도입 시)
 DoD(Local Verify): 린트/정적분석 실행 기준이 문서화되어 있다.  
 DoD(Remote Verify, if pushed): CI에서 린트 체크가 green이다.
 
