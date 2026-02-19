@@ -242,7 +242,7 @@ DoD(Remote Verify, if pushed): 통합 스모크가 CI에서 green이다.
 DoD(Local Verify): 9.1~9.2가 확인된다.  
 DoD(Remote Verify, if pushed): 관련 체크가 CI에서 실패하지 않는다.
 
-- [ ] 9.1 [Observability] 수집 실행 로그 스키마/포맷 정의
+- [x] 9.1 [Observability] 수집 실행 로그 스키마/포맷 정의
 DoD(Local Verify): 수집 실행 결과(성공/실패/시간)가 구조적으로 기록된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
