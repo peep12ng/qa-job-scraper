@@ -89,7 +89,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 필터 조건 검증 증거가 남아 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 3.3 [QA] FR-3 AC 검증 (FR-3)
+- [x] 3.3 [QA] FR-3 AC 검증 (FR-3)
 DoD(Local Verify): 저장 필드 누락 여부 검증 증거가 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
