@@ -133,7 +133,7 @@ DoD(Remote Verify, if pushed): CI에서 린트 체크가 green이다.
 DoD(Local Verify): 5.1~5.2가 재현 가능하다.  
 DoD(Remote Verify, if pushed): 배포 관련 체크가 green이다.
 
-- [ ] 5.1 [Deploy] 실행 방식 정의(웹/워커/비트)
+- [x] 5.1 [Deploy] 실행 방식 정의(웹/워커/비트)
 DoD(Local Verify): 각 실행 모드가 문서화되어 있다.  
 DoD(Remote Verify, if pushed): 배포 문서와 충돌이 없다.
 

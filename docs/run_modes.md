@@ -20,5 +20,12 @@
 - Worker: `set "PYTHONPATH=src" && .\.venv\Scripts\python -m celery -A qa_job_scraper worker -l INFO`
 - Beat: `set "PYTHONPATH=src" && .\.venv\Scripts\python -m celery -A qa_job_scraper beat -l INFO`
 
+## Deploy & Run (Local)
+- 필수 환경변수(.env): `DJANGO_SECRET_KEY`, `DB_ENGINE`, `SCRAPE_INTERVAL_HOURS`, `SCRAPE_TIMEZONE`, `PLAYWRIGHT_BROWSER`
+- DB 마이그레이션: `set "DB_ENGINE=sqlite" && .\.venv\Scripts\python src\manage.py migrate`
+- fixtures 적재: `set "DB_ENGINE=sqlite" && for %f in (fixtures\json\*-items-*.json) do .\.venv\Scripts\python src\manage.py ingest_jobs %f`
+- Web UI: `set "PYTHONPATH=src" && .\.venv\Scripts\python src\manage.py runserver 127.0.0.1:8000`
+- Worker/Beat: `CELERY_BROKER_URL` 설정 시 Run Modes 명령으로 실행
+
 ## Static Checks (cmd)
 - Syntax check: `set "PYTHONPATH=src" && python -m compileall -q src`
