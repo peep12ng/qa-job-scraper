@@ -121,7 +121,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 4.1~4.2 범위가 정리되어 있다.  
 DoD(Remote Verify, if pushed): CI 체크가 green이다.
 
-- [ ] 4.1 [CI/CD] 테스트 자동 실행 구성 (pytest)
+- [x] 4.1 [CI/CD] 테스트 자동 실행 구성 (pytest)
 DoD(Local Verify): 로컬 테스트가 재현 가능하다.  
 DoD(Remote Verify, if pushed): CI에서 테스트 체크가 green이다.
 
