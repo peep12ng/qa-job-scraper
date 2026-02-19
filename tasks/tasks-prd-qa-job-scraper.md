@@ -109,7 +109,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 스케줄 실행/기록 검증 증거가 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 3.8 [QA] FR-8 AC 검증 (FR-8)
+- [x] 3.8 [QA] FR-8 AC 검증 (FR-8)
 DoD(Local Verify): Playwright 수집 동작 검증 증거가 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
