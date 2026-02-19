@@ -85,7 +85,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): AC 검증 결과가 보고서에 남아 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 3.2 [QA] FR-2 AC 검증 (FR-2)
+- [x] 3.2 [QA] FR-2 AC 검증 (FR-2)
 DoD(Local Verify): 필터 조건 검증 증거가 남아 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
