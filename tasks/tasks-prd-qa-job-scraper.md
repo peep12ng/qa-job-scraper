@@ -129,7 +129,7 @@ DoD(Remote Verify, if pushed): CI에서 테스트 체크가 green이다.
 DoD(Local Verify): 린트/정적분석 실행 기준이 문서화되어 있다.  
 DoD(Remote Verify, if pushed): CI에서 린트 체크가 green이다.
 
-- [ ] 5.0 [Deploy] 실행/배포
+- [x] 5.0 [Deploy] 실행/배포
 DoD(Local Verify): 5.1~5.2가 재현 가능하다.  
 DoD(Remote Verify, if pushed): 배포 관련 체크가 green이다.
 
@@ -137,7 +137,7 @@ DoD(Remote Verify, if pushed): 배포 관련 체크가 green이다.
 DoD(Local Verify): 각 실행 모드가 문서화되어 있다.  
 DoD(Remote Verify, if pushed): 배포 문서와 충돌이 없다.
 
-- [ ] 5.2 [Deploy] 스모크 테스트 시나리오 작성 및 1회 실행
+- [x] 5.2 [Deploy] 스모크 테스트 시나리오 작성 및 1회 실행
 DoD(Local Verify): 스모크 증거가 남아 있다.  
 DoD(Remote Verify, if pushed): 스모크가 CI/배포 후에도 통과한다.
 
