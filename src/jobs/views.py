@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from jobs.models import JobPost, Source
+from jobs.models import JobPost, RunLog, Source
 
 JOBKOREA_EMPLOYMENT_MAP = {
     "1": "정규직",
@@ -51,6 +51,32 @@ def _select_latest_jobs(qs, limit: int) -> list[JobPost]:
 
     return jobs
 
+def _build_run_status(sources: list[Source]) -> dict:
+    latest_by_source: dict[str, RunLog] = {}
+    failed_sources: list[str] = []
+    latest_time = None
+
+    for log in RunLog.objects.select_related("source").order_by("-started_at"):
+        code = log.source.code
+        if code in latest_by_source:
+            continue
+        latest_by_source[code] = log
+        
+        if log.status == RunLog.STATUS_FAIL:
+            failed_sources.append(log.source.name)
+        
+        ts = log.finished_at or log.started_at
+        if ts and (latest_time is None or ts > latest_time):
+            latest_time = ts
+        
+        if len(latest_by_source) >= len(sources):
+            break
+    
+    return {
+        "latest_time": latest_time,
+        "failed_sources": failed_sources,
+    }
+
 def job_list(request):
     qs = JobPost.objects.for_list()
 
@@ -81,6 +107,7 @@ def job_list(request):
         job.employment_type_display = _format_employment_type(job)
 
     sources = list(Source.objects.order_by("priority"))
+    run_status = _build_run_status(sources)
 
     context = {
         "jobs": jobs,
@@ -91,5 +118,6 @@ def job_list(request):
             "source": source_code,
         },
         "sources": sources,
+        "run_status": run_status,
     }
     return render(request, "jobs/job_list.html", context)

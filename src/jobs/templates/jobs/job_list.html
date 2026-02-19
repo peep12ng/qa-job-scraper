@@ -62,6 +62,38 @@
       align-items: center;
       margin-bottom: 24px;
     }
+    .status-panel {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .status-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .status-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .status-badge {
+      background: rgba(15, 23, 42, 0.06);
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+    }
+    .status-badge--fail {
+      background: rgba(248, 113, 113, 0.15);
+      color: #b91c1c;
+    }
     .filter input, .filter select {
       width: 100%;
       padding: 10px 12px;
@@ -230,7 +262,28 @@
       </div>
       <div class="chip">최신 200</div>
     </div>
-
+    <div class="status-panel">
+      <div>
+        <div class="status-title">수집 상태</div>
+        <div class="status-meta">
+          <span class="status-badge">
+            최근 실행:
+            {% if run_status.latest_time %}
+              {{ run_status.latest_time|date:"Y-m-d H:i" }}
+            {% else %}
+              없음
+            {% endif %}
+          </span>
+          {% if run_status.failed_sources %}
+            <span class="status-badge status-badge--fail">
+              실패 소스: {{ run_status.failed_sources|join:", " }}
+            </span>
+          {% else %}
+            <span class="status-badge">실패 소스: 없음</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
     <form class="filter" method="get">
       <input type="text" name="q" placeholder="키워드" value="{{ filters.q }}">
       <input type="text" name="location" placeholder="지역" value="{{ filters.location }}">

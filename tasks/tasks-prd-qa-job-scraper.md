@@ -238,7 +238,7 @@ Note: Login HTML 수집 시 CloudFront 403 차단 발생으로 CORE 파서 구�
 DoD(Local Verify): 실제 실행 파이프라인에서 수집 결과가 확인된다.  
 DoD(Remote Verify, if pushed): 통합 스모크가 CI에서 green이다.
 
-- [ ] 9.0 [Observability] 수집 상태/로그/가시성
+- [x] 9.0 [Observability] 수집 상태/로그/가시성
 DoD(Local Verify): 9.1~9.2가 확인된다.  
 DoD(Remote Verify, if pushed): 관련 체크가 CI에서 실패하지 않는다.
 
@@ -246,7 +246,7 @@ DoD(Remote Verify, if pushed): 관련 체크가 CI에서 실패하지 않는다.
 DoD(Local Verify): 수집 실행 결과(성공/실패/시간)가 구조적으로 기록된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 9.2 [Observability] 수집 상태 표시(UI 또는 Admin)
+- [x] 9.2 [Observability] 수집 상태 표시(UI 또는 Admin)
 DoD(Local Verify): 최근 실행 시간과 실패 소스가 확인된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
