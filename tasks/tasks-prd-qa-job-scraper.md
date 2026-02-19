@@ -81,7 +81,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 3.1~3.9의 검증 결과가 증거로 남아 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 3.1 [QA] FR-1 AC 검증 (FR-1)
+- [x] 3.1 [QA] FR-1 AC 검증 (FR-1)
 DoD(Local Verify): AC 검증 결과가 보고서에 남아 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
