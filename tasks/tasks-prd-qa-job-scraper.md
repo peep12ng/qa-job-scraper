@@ -101,7 +101,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 목록 UI 표시 검증 증거가 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 3.6 [QA] FR-6 AC 검증 (FR-6)
+- [x] 3.6 [QA] FR-6 AC 검증 (FR-6)
 DoD(Local Verify): 상세 UI 표시 검증 증거가 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
