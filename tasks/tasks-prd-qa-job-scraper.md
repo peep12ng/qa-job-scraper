@@ -93,7 +93,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 저장 필드 누락 여부 검증 증거가 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 3.4 [QA] FR-4 AC 검증 (FR-4)
+- [x] 3.4 [QA] FR-4 AC 검증 (FR-4)
 DoD(Local Verify): 중복 병합 결과 검증 증거가 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
