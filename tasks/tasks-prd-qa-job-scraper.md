@@ -77,7 +77,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): 부분 실패 시 전체 파이프라인이 중단되지 않는다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 3.0 [QA] 요구사항 검증
+- [x] 3.0 [QA] 요구사항 검증
 DoD(Local Verify): 3.1~3.9의 검증 결과가 증거로 남아 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
@@ -113,7 +113,7 @@ DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 DoD(Local Verify): Playwright 수집 동작 검증 증거가 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
-- [ ] 3.9 [QA] NFR 신뢰성/부분 실패 격리 검증
+- [x] 3.9 [QA] NFR 신뢰성/부분 실패 격리 검증
 DoD(Local Verify): 실패 시나리오 1~2개 검증 증거가 있다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
