@@ -13,7 +13,7 @@ Notes: 12h schedule; filters 서울/0~1년/QA/소스별 직종; sources priority
 아래 태스크는 PRD 기반으로 생성된 계획 초안이다. 번호/개수는 PRD의 FR/NFR 및 옵션 분류에 맞춰 구성되어 있다.
 
 ## Tasks
-- [] 1.0 [Infra] 프로젝트 부트스트랩/실행 환경 구성
+- [x] 1.0 [Infra] 프로젝트 부트스트랩/실행 환경 구성
 DoD(Local Verify): 1.1~1.5가 완료되어 기본 실행이 가능하다.  
 DoD(Remote Verify, if pushed): CI 기본 단계에서 환경 세팅 실패가 없다.
 
@@ -37,7 +37,7 @@ DoD(Remote Verify, if pushed): 동일 스모크가 CI에서도 재현 가능하�
 DoD(Local Verify): 실행 모드별 진입 절차가 문서화되어 있다.  
 DoD(Remote Verify, if pushed): 실행 모드 안내가 CI 문서와 충돌하지 않는다.
 
-- [ ] 2.0 [DEV] 기능 구현
+- [x] 2.0 [DEV] 기능 구현
 DoD(Local Verify): 2.1~2.9의 핵심 동작이 로컬에서 확인된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
 
@@ -229,12 +229,11 @@ DoD(Remote Verify, if pushed): 통합 스모크가 CI에서 green이다.
 DoD(Local Verify): fixtures/html 또는 fixtures/json에 샘플이 저장되어 있다.  
 DoD(Remote Verify, if pushed): 샘플 기반 재현 문서가 있다.
 
-- [ ] 8.5-RP-CORE [Integrations] 로켓펀치 파서/정규화 로직 구현
+- [ ] 8.5-RP-CORE [Integrations] 로켓펀치 파서/정규화 로직 구현 Note: Login HTML 수집 시 CloudFront 403 차단 발생으로 CORE 파서 구현 보류. (2026-02-13)
 DoD(Local Verify): 샘플 입력으로 표준 모델 변환이 된다.  
 DoD(Remote Verify, if pushed): 관련 테스트가 CI에서 green이다.
-Note: Login HTML 수집 시 CloudFront 403 차단 발생으로 CORE 파서 구현 보류. (2026-02-13)
 
-- [ ] 8.5-RP-INT [Integrations] 로켓펀치 수집 파이프라인 통합
+- [ ] 8.5-RP-INT [Integrations] 로켓펀치 수집 파이프라인 통합 Note: 현재 미구현 결정(보류). (2026-02-20)
 DoD(Local Verify): 실제 실행 파이프라인에서 수집 결과가 확인된다.  
 DoD(Remote Verify, if pushed): 통합 스모크가 CI에서 green이다.
 
