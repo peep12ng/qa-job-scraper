@@ -145,7 +145,7 @@ DoD(Remote Verify, if pushed): 스모크가 CI/배포 후에도 통과한다.
 DoD(Local Verify): 6.1~6.3 문서가 존재한다.  
 DoD(Remote Verify, if pushed): 문서 링크/배지가 깨지지 않는다.
 
-- [ ] 6.1 [Docs] README: 설치/실행/테스트/폴더 구조 정리
+- [x] 6.1 [Docs] README: 설치/실행/테스트/폴더 구조 정리
 DoD(Local Verify): 신규 환경에서 재현 가능한 수준이다.  
 DoD(Remote Verify, if pushed): 문서 체크가 CI에서 실패하지 않는다.
 
