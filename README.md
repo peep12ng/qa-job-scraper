@@ -1,5 +1,11 @@
 # QA Job Scraper
 
+<p style="width: 1450px; max-width: 100%">
+   <img src="docs/assets/job_list.PNG" alt="공고 목록 화면" width="32%" height="400">
+   <img src="docs/assets/job_list_filtered.PNG" alt="공고 목록 화면(필터)" width="32%" height="400">
+   <img src="docs/assets/job_detail.PNG" alt="공고 상세 화면" width="32%" height="400">
+</p>
+
 ## 개요
 여러 소스에서 공고를 수집하고 정규화한 뒤, 간단한 목록 UI로 보여주는 Django 기반 잡 스크레이퍼 프로젝트입니다.
 
