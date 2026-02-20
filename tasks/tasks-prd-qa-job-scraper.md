@@ -149,7 +149,7 @@ DoD(Remote Verify, if pushed): 문서 링크/배지가 깨지지 않는다.
 DoD(Local Verify): 신규 환경에서 재현 가능한 수준이다.  
 DoD(Remote Verify, if pushed): 문서 체크가 CI에서 실패하지 않는다.
 
-- [ ] 6.2 [Docs] 수집 정책/robots 및 약관 준수 문서화
+- [x] 6.2 [Docs] 수집 정책/robots 및 약관 준수 문서화
 DoD(Local Verify): 준수 기준과 요청 빈도 정책이 명확하다.  
 DoD(Remote Verify, if pushed): 문서 체크가 CI에서 실패하지 않는다.
 
