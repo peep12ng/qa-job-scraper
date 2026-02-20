@@ -141,7 +141,7 @@ DoD(Remote Verify, if pushed): 배포 문서와 충돌이 없다.
 DoD(Local Verify): 스모크 증거가 남아 있다.  
 DoD(Remote Verify, if pushed): 스모크가 CI/배포 후에도 통과한다.
 
-- [ ] 6.0 [Docs] 문서화
+- [x] 6.0 [Docs] 문서화
 DoD(Local Verify): 6.1~6.3 문서가 존재한다.  
 DoD(Remote Verify, if pushed): 문서 링크/배지가 깨지지 않는다.
 
@@ -153,7 +153,7 @@ DoD(Remote Verify, if pushed): 문서 체크가 CI에서 실패하지 않는다.
 DoD(Local Verify): 준수 기준과 요청 빈도 정책이 명확하다.  
 DoD(Remote Verify, if pushed): 문서 체크가 CI에서 실패하지 않는다.
 
-- [ ] 6.3 [Docs] 운영/스케줄/장애 대응 메모 작성
+- [x] 6.3 [Docs] 운영/스케줄/장애 대응 메모 작성
 DoD(Local Verify): 운영 절차가 5~10줄로 정리되어 있다.  
 DoD(Remote Verify, if pushed): 문서 체크가 CI에서 실패하지 않는다.
 
